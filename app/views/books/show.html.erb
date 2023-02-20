@@ -8,4 +8,4 @@
 <td><%= @book.body %></td>
 </p>
 
-<%= link_to 'Back',new_book_path %>
+<%= link_to 'Back',new_book_path %>|<%= link_to 'edit',edit_book_path(@book.id) %>
