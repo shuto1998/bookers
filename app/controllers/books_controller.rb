@@ -38,6 +38,14 @@ class BooksController < ApplicationController
     end
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    if @book.destroy
+    flash[:notice] = "Book was successfully destroyed."
+    redirect_to new_book_path
+    end
+  end
+
   private
   def book_params
     params.require(:book).permit(:title,:body)
